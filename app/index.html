@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>EtherSign</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <h1>EtherSign</h1>
+    <p>You are agreeing to sign this document</p>
+  </body>
+  
+  
+    <div class="tab-content">
+      <h3>Sign Document</h3>
+      
+      <div role="tabpanel" class="tab-pane" id="storage">
+        <h3>upload file to ipfs</h3>
+        <div class="form-group form-inline">
+          <input type="file" class="form-control">
+          <button class="uploadFile set btn btn-primary">upload</button>
+          <p>generated hash: <span class="fileIpfsHash"></span></p>
+        </div>
+      </div>
+        
+      <div role="tabpanel" class="tab-pane active" id="blockchain">
+        
+        <div class="form-group form-inline">
+          <input type="text" class="text form-control" placeholder="Your name">
+          <button class="set btn btn-primary">I Agree</button>
+          
+        </div>
+        
+        <div id="invite">
+        </div>
+     </div>
+   </div>
+</html>

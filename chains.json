@@ -1,0 +1,11 @@
+{
+  "0xb6cfeab83614da04c03db0fb8a6787a45d0be8d576fcc6f8f457a5a816d22ab3": {
+    "contracts": {
+      "0x42120df402b6cee469471bab1ac62b6dbe0a49904d096b137b60ee9509bdb71d": {
+        "name": "Notary",
+        "address": "0x723aa8ab74e77c87223a967951892b150293b7c9"
+      }
+    },
+    "name": "development"
+  }
+}

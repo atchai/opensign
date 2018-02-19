@@ -6,32 +6,32 @@
   </head>
   <body>
     <h1>EtherSign</h1>
-    <p>You are agreeing to sign this document</p>
   </body>
   
   
     <div class="tab-content">
-      <h3>Sign Document</h3>
+      <h4>Create an agreement on the blockchain</h4>
       
       <div role="tabpanel" class="tab-pane" id="storage">
-        <h3>upload file to ipfs</h3>
+        <h3>Step 1: Upload the document you want to sign</h3>
+        <p>This file will be uploaded to IPFS</p>
         <div class="form-group form-inline">
           <input type="file" class="form-control">
           <button class="uploadFile set btn btn-primary">upload</button>
-          <p>generated hash: <span class="fileIpfsHash"></span></p>
         </div>
       </div>
         
       <div role="tabpanel" class="tab-pane active" id="blockchain">
-        
+        <h3>Step 2: Sign the document</h3>
+        <p>This will record your signature in a smart contract on the Ethereum blockchain</p>
         <div class="form-group form-inline">
           <input type="text" class="text form-control" placeholder="Your name">
           <button class="set btn btn-primary">I Agree</button>
-          
         </div>
-        
-        <div id="invite">
-        </div>
+     </div>
+     
+     <div id="invite">
+       <h3>Step 3: Invite others to sign the document</h3>
      </div>
    </div>
 </html>

@@ -3,7 +3,8 @@
   "app": {
     "css/app.css": ["app/css/**"],
     "js/app.js": ["embark.js", "app/js/_vendor/jquery.min.js", "app/js/_vendor/bootstrap.min.js",  "app/js/**"],
-    "index.html": "app/index.html"
+    "index.html": "app/index.html",
+    "sign.html": "app/sign.html"
   },
   "buildDir": "dist/",
   "config": "config/",

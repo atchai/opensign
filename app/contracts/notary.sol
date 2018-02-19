@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.20;
 
 contract Notary{
     struct Document {
@@ -19,6 +19,10 @@ contract Notary{
     function signDocument(bytes ipfs) public {
         users[msg.sender].push(ipfs);
         documents[keccak256(ipfs)].signatures.push(msg.sender);
+    }
+    
+    function getSignatures(bytes ipfs) public view returns (address[]) {
+        return documents[keccak256(ipfs)].signatures;
     }
 
 }

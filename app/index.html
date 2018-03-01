@@ -5,33 +5,71 @@
     <script src="js/app.js"></script>
   </head>
   <body>
-    <h1>EtherSign</h1>
-  </body>
-  
-  
-    <div class="tab-content">
-      <h4>Create an agreement on the blockchain</h4>
-      
-      <div role="tabpanel" class="tab-pane" id="storage">
-        <h3>Step 1: Upload the document you want to sign</h3>
-        <p>This file will be uploaded to IPFS</p>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">EtherSign</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" _lpchecked="1">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+    <div class="jumbotron">
+      <h1 class="display-3">EtherSign</h1>
+      <p class="lead">Peer to peer agreements on the blockchain.</p>
+      <hr class="my-4">
+      <p>Fully decentralized document storage using IPFS.  Multi-party signatures stored on the Ethereum blockchain.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+    
+    <div class="card bg-light mb-3 mx-auto" id="storage" style="max-width:90%;">
+      <div class="card-header"><b>Step 1:</b> Upload the document you want to sign</div>
+      <div class="card-body">
         <div class="form-group form-inline">
-          <input type="file" class="form-control">
-          <button class="uploadFile set btn btn-primary">upload</button>
+          <input type="file" class="form-control"> 
+          <button class="uploadFile set btn btn-primary">Upload</button>
         </div>
       </div>
-        
-      <div role="tabpanel" class="tab-pane active" id="blockchain">
-        <h3>Step 2: Sign the document</h3>
-        <p>This will record your signature in a smart contract on the Ethereum blockchain</p>
+    </div>
+    
+    <div class="card bg-light mb-3 mx-auto" id="blockchain" style="max-width:90%;">
+      <div class="card-header"><b>Step 2:</b> Sign the document</div>
+      <div class="card-body">
         <div class="form-group form-inline">
           <input type="text" class="text form-control" placeholder="Your name">
-          <button class="set btn btn-primary">I Agree</button>
+          <button class="set btn btn-success">I Agree</button>
         </div>
-     </div>
-     
-     <div id="invite">
-       <h3>Step 3: Invite others to sign the document</h3>
-     </div>
-   </div>
+      </div>
+    </div>
+    
+    <div class="card bg-light mb-3 mx-auto" id="invite" style="max-width:90%;">
+      <div class="card-header"><b>Step 3:</b> Invite others to sign the document</div>
+      <div class="card-body">
+      </div>
+    </div>
+    
+  </body>
+   
 </html>

@@ -25,29 +25,45 @@ $(document).ready(function() {
   $("#blockchain").hide();
   $("#invite").hide();
   
-  console.log(getQueryVariable("ipfs"))
-  $("span.file_url").html('<a href="' + EmbarkJS.Storage.getUrl(getQueryVariable("ipfs")) + '">this document</a>');
-  
-  $("#sign button.set").click(function() {
-    let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
+  // we're on sign page
+ // if (getQueryVariable("ipfs") != false) {
+ //   let addresses = Notary.methods.getSignatures().call().then(function(value) { console.log(value) });
+
+ //   console.log(addresses)
+    $("span.file_url").html('<a href="' + EmbarkJS.Storage.getUrl(getQueryVariable("ipfs")) + '">View document</a>');
     
-    Notary.methods.signDocument(value).send({from: web3.eth.defaultAccount});
+    $("#signatures button.get").click(function() {
+      let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
+    
+      let addresses = Notary.methods.getSignatures(value).call().then(function(value) { console.log(value) });
         
-    $("#signed").show();
-    $("#signed").append("<p>You have signed! Keep a record of this URL to refer to your agreement.</p>");
+    });
     
-  });
+    $("#sign button.set").click(function() {
+      let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
+    
+      Notary.methods.signDocument(value).send({from: web3.eth.defaultAccount});
+        
+      $("#signed").show();
+      $("#signed").append("<p>You have signed! Keep a record of this URL to refer to your agreement.</p>");
+    
+    });
+//  }
+  
+  
+  
+
 
   $("#blockchain button.set").click(function() {
     let value = web3.utils.asciiToHex(ipfs)
     
     Notary.methods.addDocument(value).send({from: web3.eth.defaultAccount});
     
-    let sign_url = window.location.href + "sign.html?ipfs=" + ipfs;
+    let sign_url = window.location.href + "/sign.html?ipfs=" + ipfs;
     
     $("#invite").show();
-    $("#invite").append("<p>Keep this address and share it with others who you want to sign the document: </p>");
-    $("#invite").append('<p><a href="' + sign_url + '">' + sign_url + "</p>");
+    $("#invite .card-body").append("<p>Keep this address and share it with others who you want to sign the document: </p>");
+    $("#invite .card-body").append('<p><a href="' + sign_url + '">' + sign_url + "</p>");
     
   });
   
@@ -57,7 +73,7 @@ $(document).ready(function() {
     EmbarkJS.Storage.uploadFile(input).then(function(hash) {
       ipfs = hash;
       let url = EmbarkJS.Storage.getUrl(ipfs);
-      $("#storage").append('<p>Your document is accessible here: <a href="' + url + '">' + url + "</p>");
+      $("#storage .card-body").append('<p>Your document is accessible here: <a href="' + url + '">' + url + "</p>");
       $("#blockchain").show()
       
     })

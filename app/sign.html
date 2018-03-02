@@ -1,77 +1,173 @@
 <html>
   <head>
-    <title>EtherSign</title>
+    <title>OpenSign</title>
     <link rel="stylesheet" href="css/app.css">
     <script src="js/app.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://atchai.com/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://atchai.com/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://atchai.com/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://atchai.com/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://atchai.com/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://atchai.com/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://atchai.com/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://atchai.com/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://atchai.com/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://atchai.com/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://atchai.com/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://atchai.com/img/favicons/safari-pinned-tab.svg">
   </head>
   
   <body>    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">EtherSign</a>
+      <a class="navbar-brand" href="/">OpenSign</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
+       
         </ul>
-        <form class="form-inline my-2 my-lg-0" _lpchecked="1">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="form-inline my-2 my-lg-0" _lpchecked="1">      
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item">
+               <a class="nav-link" href="/">+ Create New Agreement</a>
+             </li>
+           </ul>
+        </div>
       </div>
     </nav>
-    
+  
     <div class="jumbotron">
-      <h1 class="display-3">EtherSign</h1>
-      <p class="lead">Peer to peer agreements on the blockchain.</p>
-      <hr class="my-4">
-      <p>Fully decentralized document storage using IPFS.  Multi-party signatures stored on the Ethereum blockchain.</p>
+      <h1 class="display-3">OpenSign</h1>
+      <p class="lead">Peer to peer agreements on the Ethereum blockchain.</p>
+      <hr class="my-4" >
+      <p>OpenSign is a decentralized alternative to products like DocuSign and EchoSign.</p>
+      <p>Documents are stored on IPFS and the signatures are stored on the Ethereum Blockchain.</p>  
+      
+    
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-primary btn-lg btn-learn-more" href="#" role="button">Learn more</a>
       </p>
+    
+      <div id="learn-more" style="margin-top:50px">
+        <h3>Create an Agreement in 3 Steps</h3>
+        <h5>Step 1: Upload a document</h5>
+        <p>Simply upload the document or contract that you wish to sign.  It will be stored on <a href="https://ipfs.io/">IPFS</a>, a public decentralized filesystem</p>  
+      
+        <h5>Step 2: Sign the document</h5>
+        <p>You will need <a href="https://metamask.io/">MetaMask</a> or a similar ethereum enabled browser in order to complete this step.  Clicking "I agree" should open MetaMask and request you to submit a transaction for zero ether.  There will be a gas cost for this transaction, likely between $0.3 and $0.30. </p>
+      
+        <h5>Step 3: Invite others to sign the document</h5>
+        <p>You will be given a URL that you can share with other people.  When they use this URL they will be able to add their signature to the document in the same way.  You can return to this URL yourself to see which ethereum addresses have added their signature.</p>
+      </div>
+    
     </div>
   
   
-    <div class="card bg-light mb-3 mx-auto" id="" style="max-width:80%;">
-      <div class="card-header"><b>You have been invited to sign a document</b></div>
-      <div class="card-body text-centre centre-text">
-        <h2><span class="file_url"></span></h2>
+    <!-- CONTENT  -->
+  
+    <div class="container">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>Create an Agreement</h2>
+        </div>
       </div>
-    </div>
     
-    <div class="card bg-light mb-3 mx-auto" style="max-width:80%;" id="signatures">
-      <div class="card-header"><b>Signatures</b></div>
-      <div class="card-body">
-        <button class="get btn btn-primary">Get addresses that have already signed this document</button>
+  
+      <div class="card bg-light mb-3 mx-auto" id="" style="max-width:90%;">
+        <div class="card-header"><b>You have been invited to sign a document</b></div>
+        <div class="card-body text-centre centre-text">
+          <h2><span class="file_url"></span></h2>
+        </div>
       </div>
-    </div>
     
-    <div class="card bg-light mb-3 mx-auto" id="sign" style="max-width:80%;">
-      <div class="card-header"><b>Add your signature</b></div>
-      <div class="card-body">
-        <div class="form-group form-inline">
-          <input type="text" class="text form-control" placeholder="Your name">
-          <button class="set btn btn-primary">I agree</button>
+      <div class="card bg-light mb-3 mx-auto" style="max-width:90%;" id="signatures">
+        <div class="card-header"><b>Who has signed already?</b></div>
+        <div class="card-body">
+          <button class="get btn btn-primary">Get addresses that have already signed this document</button>
+        </div>
+      </div>
+    
+      <div class="card bg-light mb-3 mx-auto" id="sign" style="max-width:90%;">
+        <div class="card-header"><b>Add your signature</b></div>
+        <div class="card-body">
+          <p>By clicking "I Agree" you confirm that you have read the document linked above and that you agree to sign it.  You will need to be using a browser with Ethereum support such as the MetaMask plugin.  Once you click "I agree" you will be asked to sign the transaction - this will not transfer any ether but there will be a gas fee of approx $0.10.
+          <div class="form-group form-inline">
+            <input type="text" class="text form-control" placeholder="Your name">
+            <button class="set btn btn-primary">I agree</button>
+          </div>
         </div>
       </div>
     </div>
     
-      
 
-   </body>
+  <!--Footer-->
+        <footer class="page-footer font-small bg-primary pt-0">
+    
+            <!--Footer Links-->
+            <div class="container">
+    
+                <!--Grid row-->
+                <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+    
+                  <!--Grid column-->
+                  <div class="col-md-2 mb-3">
+                      <h3 class="title font-weight-bold" style="color:white">OpenSign</h3>
+                  </div>
+                  <!--Grid column-->
+    
+                </div>
+                <!--Grid row-->
+    
+                <hr class="white" style="margin: 0 15%;">
+    
+                <!--Grid row-->
+                <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+    
+                    <!--Grid column-->
+                    <div class="col-md-8 col-12 mt-5">
+                        <p style="line-height: 1.7rem; color:white">
+                          OpenSign is a decentralized alternative to products like DocuSign and EchoSign.  Documents are stored on IPFS, a decentralized filesystem, and the signatures are stored on the Ethereum blockchain.  The only thing that's left is the code that's running in your browser right now, and that's on IPFS too!
+                        </p>
+    
+                    </div>
+                    <!--Grid column-->
+    
+                </div>
+                <!--Grid row-->
+    
+                <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+    
+    
+            </div>
+            <!--/Footer Links-->
+    
+            <!--Copyright-->
+            <div class="footer-copyright py-3 text-center">
+                <div class="container-fluid" style="color:white">
+                    &copy; 2018 Created by <a href="https://atchai.com"> atchai.com </a>
+                </div>
+            </div>
+            <!--/Copyright-->
+    
+        </footer>
+        <!--/Footer-->
+  
 
-   </div>
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-18118166-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-18118166-3');
+  </script>
+  
+
 </html>

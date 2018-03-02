@@ -16,8 +16,9 @@
     "gas": "auto",
     "contracts": {
       "Notary" : {
-        "address":"0xba733461a902b1077751c5d7bf2eb06a71605b03"
+        "address":"0x302a96c2933f1e6dce68342e8def7e1e5e6ed059"
       }
     }
   }
 }
+

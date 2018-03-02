@@ -3,7 +3,7 @@ var addToLog = function(id, txt) {
   $(id).append("<br>" + txt);
 };
 
-function getQueryVariable(variable)
+var getQueryVariable = function(variable)
 {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
@@ -24,18 +24,26 @@ $(document).ready(function() {
   
   $("#blockchain").hide();
   $("#invite").hide();
+  $("#learn-more").hide();
   
-  // we're on sign page
- // if (getQueryVariable("ipfs") != false) {
- //   let addresses = Notary.methods.getSignatures().call().then(function(value) { console.log(value) });
+ // EmbarkJS.Storage.setProvider('ipfs',{server: 'ipfs.infura.io', port: '5001'})
+  
+  // Sign page
+  if (getQueryVariable("ipfs") != false) {
 
- //   console.log(addresses)
     $("span.file_url").html('<a href="' + EmbarkJS.Storage.getUrl(getQueryVariable("ipfs")) + '">View document</a>');
     
     $("#signatures button.get").click(function() {
       let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
     
-      let addresses = Notary.methods.getSignatures(value).call().then(function(value) { console.log(value) });
+      let addresses = Notary.methods.getSignatures(value).call().then(function(signatures) { 
+        signatures.forEach(function(sig) {
+          console.log(sig) 
+          
+          $("#signatures button.get").hide();
+          $("#signatures .card-body").append("<p>" + sig + "</p>");
+        })
+      });
         
     });
     
@@ -48,11 +56,15 @@ $(document).ready(function() {
       $("#signed").append("<p>You have signed! Keep a record of this URL to refer to your agreement.</p>");
     
     });
-//  }
+  }
   
   
+  $(".btn-learn-more").click(function() {
+    $(".btn-learn-more").hide();
+    $("#learn-more").show();
+  });
   
-
+  
 
   $("#blockchain button.set").click(function() {
     let value = web3.utils.asciiToHex(ipfs)

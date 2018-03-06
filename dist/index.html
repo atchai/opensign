@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>OpenSign</title>
+    <title>OpenSign - Decentralized document signing on the blockchain</title>
     <link rel="stylesheet" href="css/app.css">
     <script src="js/app.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="https://atchai.com/img/favicons/apple-touch-icon-57x57.png">
@@ -46,32 +46,57 @@
       <h1 class="display-3">OpenSign</h1>
       <p class="lead">Peer to peer agreements on the Ethereum blockchain.</p>
       <hr class="my-4" >
-      <p>OpenSign is a decentralized alternative to products like DocuSign and EchoSign.</p>
-      <p>Documents are stored on IPFS and the signatures are stored on the Ethereum Blockchain.</p>  
+      <p>OpenSign is a fully decentralized alternative to products like DocuSign and EchoSign.</p>
+      <p>Documents are stored on IPFS and the signatures are stored on the Ethereum blockchain.</p>  
       
     
       <p class="lead">
-        <a class="btn btn-primary btn-lg btn-learn-more" href="#" role="button">Learn more</a>
+        <a class="btn btn-primary btn-lg btn-learn-more" role="button" style="color:white">Learn more</a>
       </p>
     
       <div id="learn-more" style="margin-top:50px">
         <h3>Create an Agreement in 3 Steps</h3>
         <h5>Step 1: Upload a document</h5>
-        <p>Simply upload the document or contract that you wish to sign.  It will be stored on <a href="https://ipfs.io/">IPFS</a>, a public decentralized filesystem</p>  
+        <p>Upload the document or contract that you wish to be signed.  It will be stored on <a href="https://ipfs.io/">IPFS</a>, a public decentralized filesystem.</p>  
       
         <h5>Step 2: Sign the document</h5>
-        <p>You will need <a href="https://metamask.io/">MetaMask</a> or a similar ethereum enabled browser in order to complete this step.  Clicking "I agree" should open MetaMask and request you to submit a transaction for zero ether.  There will be a gas cost for this transaction, likely between $0.3 and $0.30. </p>
+        <p>You will need <a href="https://metamask.io/">MetaMask</a> or a similar ethereum enabled browser in order to complete this step.  Clicking "I agree" should open MetaMask and request you to submit a transaction for zero ether.  There will be a gas cost for this transaction, likely between $0.3 and $0.30. Your ethereum address will be publically associated with the document.</p>
       
         <h5>Step 3: Invite others to sign the document</h5>
-        <p>You will be given a URL that you can share with other people.  When they use this URL they will be able to add their signature to the document in the same way.  You can return to this URL yourself to see which ethereum addresses have added their signature.</p>
+        <p>You will be given a URL that you can share with other people.  This URL will allow them to add their signature to the document too.  You can use this URL yourself to see which ethereum addresses have added their signature.</p>
       </div>
     
     </div>
+    
+    <!-- METAMASK NOT INSTALLED  -->
+  
+    <div class="container" id="metamask-install">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>You need to install Metamask</h2>
+          <p>It looks like you're not using an ethereum enabled browser.  The simplest way to solve this is to</p>
+          <h4><a href="https://metamask.io/">Download Metamask</a></h4>
+          <p>You will need to install Metamask and then refresh this page.  If you are using the live ethereum network then you will also need to pay for some ether in your account.
+        </div>
+      </div>
+    </div>
+
+    <!-- METAMASK NOT LOGGED IN  -->
+  
+    <div class="container" id="metamask-login">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>You are not logged in to Metamask</h2>
+          <p>It looks like you have Metamask installed but you are not logged in.  Please log in and refresh the page</p>
+        </div>
+      </div>
+    </div>
+    
   
   
     <!-- CONTENT  -->
   
-    <div class="container">
+    <div class="container" id="main-content">
       <div class="row" style="margin: 50 0 50 0px">
         <div class="col-md-12 text-center">
           <h2>Create an Agreement</h2>
@@ -93,9 +118,11 @@
         <div class="card-header"><b>Step 2:</b> Sign the document</div>
         <div class="card-body">
           <div class="form-group form-inline">
-            <input type="text" class="text form-control" placeholder="Your name">
+            <!--<input type="text" class="text form-control" placeholder="Your name">-->
             <button class="set btn btn-success">I Agree</button>
           </div>
+          <p>You will need <a href="https://metamask.io/">MetaMask</a> or a similar ethereum enabled browser in order to complete this step.  Clicking "I agree" should open MetaMask and request you to submit a transaction for zero ether.  There will be a gas cost for this transaction, likely between $0.03 and $0.30. </p>
+          <p>Signing will associate your ethereum address with this document publically on the blockchain.</p>
         </div>
       </div>
     
@@ -137,7 +164,7 @@
                       <!--Grid column-->
                       <div class="col-md-8 col-12 mt-5">
                           <p style="line-height: 1.7rem; color:white">
-                            OpenSign is a decentralized alternative to products like DocuSign and EchoSign.  Documents are stored on IPFS, a decentralized filesystem, and the signatures are stored on the Ethereum blockchain.  The only thing that's left is the code that's running in your browser right now, and that's on IPFS too!
+                            OpenSign is a decentralized alternative to products like DocuSign and EchoSign.  Documents are stored on IPFS, a decentralized filesystem, and the signatures are stored on the Ethereum blockchain.  The only thing that's left is the code that's running in your browser right now, and that's hosted on IPFS too!
                           </p>
       
                       </div>

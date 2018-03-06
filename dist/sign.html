@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>OpenSign</title>
+    <title>OpenSign - Decentralized document signing on the blockchain</title>
     <link rel="stylesheet" href="css/app.css">
     <script src="js/app.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="https://atchai.com/img/favicons/apple-touch-icon-57x57.png">
@@ -50,7 +50,7 @@
       
     
       <p class="lead">
-        <a class="btn btn-primary btn-lg btn-learn-more" href="#" role="button">Learn more</a>
+        <a class="btn btn-primary btn-lg btn-learn-more" role="button" style="color:white">Learn more</a>
       </p>
     
       <div id="learn-more" style="margin-top:50px">
@@ -66,11 +66,34 @@
       </div>
     
     </div>
+    
+    <!-- METAMASK NOT INSTALLED  -->
   
+    <div class="container" id="metamask-install">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>You need to install Metamask</h2>
+          <p>It looks like you're not using an ethereum enabled browser.  The simplest way to solve this is to</p>
+          <h4><a href="https://metamask.io/">Download Metamask</a></h4>
+          <p>You will need to install Metamask and then refresh this page.  If you are using the live ethereum network then you will also need to pay for some ether in your account.
+        </div>
+      </div>
+    </div>
+
+    <!-- METAMASK NOT LOGGED IN  -->
+  
+    <div class="container" id="metamask-login">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>You are not logged in to Metamask</h2>
+          <p>It looks like you have Metamask installed but you are not logged in.  Please log in and refresh the page</p>
+        </div>
+      </div>
+    </div>
   
     <!-- CONTENT  -->
   
-    <div class="container">
+    <div class="container" id="main-content">
       <div class="row" style="margin: 50 0 50 0px">
         <div class="col-md-12 text-center">
           <h2>Create an Agreement</h2>
@@ -95,7 +118,10 @@
       <div class="card bg-light mb-3 mx-auto" id="sign" style="max-width:90%;">
         <div class="card-header"><b>Add your signature</b></div>
         <div class="card-body">
-          <p>By clicking "I Agree" you confirm that you have read the document linked above and that you agree to sign it.  You will need to be using a browser with Ethereum support such as the MetaMask plugin.  Once you click "I agree" you will be asked to sign the transaction - this will not transfer any ether but there will be a gas fee of approx $0.10.
+          <p>By clicking "I Agree" you confirm that you have read the document linked above and that you agree to sign it.  You will need to be using a browser with Ethereum support such as the MetaMask plugin. </p>
+            
+          <p>You will need <a href="https://metamask.io/">MetaMask</a> or a similar ethereum enabled browser in order to complete this step.  Clicking "I agree" should open MetaMask and request you to submit a transaction for zero ether.  There will be a gas cost for this transaction, likely between $0.03 and $0.30. </p>
+          <p>Signing will associate your ethereum address with this document publically on the blockchain.</p>
           <div class="form-group form-inline">
             <input type="text" class="text form-control" placeholder="Your name">
             <button class="set btn btn-primary">I agree</button>
@@ -131,7 +157,7 @@
                     <!--Grid column-->
                     <div class="col-md-8 col-12 mt-5">
                         <p style="line-height: 1.7rem; color:white">
-                          OpenSign is a decentralized alternative to products like DocuSign and EchoSign.  Documents are stored on IPFS, a decentralized filesystem, and the signatures are stored on the Ethereum blockchain.  The only thing that's left is the code that's running in your browser right now, and that's on IPFS too!
+                          OpenSign is a decentralized alternative to products like DocuSign and EchoSign.  Documents are stored on IPFS, a decentralized filesystem, and the signatures are stored on the Ethereum blockchain.  The only thing that's left is the code that's running in your browser right now, and that's hosted on IPFS too!
                         </p>
     
                     </div>

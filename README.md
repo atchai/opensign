@@ -4,7 +4,7 @@ OpenSign is a fully decentralized document signing and notary system.
 
 Files are stored on the Interplanetary FileSystem (IPFS) and the signatures are stored on the Ethereum Blockchain.
 
-This project is available to use at https://opensign.com
+This project is available to use at https://opensignapp.com
 
 
 ### Development

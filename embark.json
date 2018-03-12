@@ -4,7 +4,7 @@
     "css/app.css": ["app/css/**"],
     "js/app.js": ["embark.js", "app/js/_vendor/jquery.min.js", "app/js/_vendor/bootstrap.min.js",  "app/js/**"],
     "index.html": "app/index.html",
-    "sign.html": "app/sign.html",
+    "sign/index.html": "app/sign.html",
     "favicon-96x96.png": "app/favicon-96x96.png",
     "favicon-32x32.png": "app/favicon-32x32.png",
     "favicon-16x16.png": "app/favicon-16x16.png",   

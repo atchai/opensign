@@ -55,6 +55,10 @@
       </p>
     
       <div id="learn-more" style="margin-top:50px">
+        
+        <h3>Ropsten Only</h3>
+        <p>We are currently in testing on the <b>Ropsten test net</b>.  To use OpenSign today please use the menu at the top left corner of Metamask to switch to the Ropsten test net.  You can then <a href="https://faucet.metamask.io/">collect some free ether from the faucet here</a>.</p>  
+        
         <h3>Create an Agreement in 3 Steps</h3>
         <h5>Step 1: Upload a document</h5>
         <p>Upload the document or contract that you wish to be signed.  It will be stored on <a href="https://ipfs.io/">IPFS</a>, a public decentralized filesystem.</p>  
@@ -64,7 +68,17 @@
       
         <h5>Step 3: Invite others to sign the document</h5>
         <p>You will be given a URL that you can share with other people.  This URL will allow them to add their signature to the document too.  You can use this URL yourself to see which ethereum addresses have added their signature.</p>
+        
+        <h3>Further Details</h3>
+        <p>This project is open source, the <a href="https://github.com/atchai/opensign">source code is available on Github</a></p>
+        <p>You can find the smart contract code here.</p>
+        <p>We use the Infura public IPFS node for file uploads.</p>
+        
+        
       </div>
+      
+      
+      
     
     </div>
     
@@ -76,7 +90,7 @@
           <h2>You need to install Metamask</h2>
           <p>It looks like you're not using an ethereum enabled browser.  The simplest way to solve this is to</p>
           <h4><a href="https://metamask.io/">Download Metamask</a></h4>
-          <p>You will need to install Metamask and then refresh this page.  If you are using the live ethereum network then you will also need to pay for some ether in your account.
+          <p>You will need to install Metamask and then refresh this page.  If you are using the live ethereum network then you will also need to pay for some ether in your account.</p>
         </div>
       </div>
     </div>
@@ -92,7 +106,17 @@
       </div>
     </div>
     
+    <!-- WRONG NETWORK  -->
   
+    <div class="container" id="metamask-network">
+      <div class="row" style="margin: 50 0 50 0px">
+        <div class="col-md-12 text-center">
+          <h2>Please use Ropsten Network</h2>
+          <p>This dapp is only available on the Ropsten network at the moment, please switch network in the top left hand corner of MetaMask.</p>
+          <p>You can then <a href="https://faucet.metamask.io/">collect some free ether from the faucet here</a>.</p>
+        </div>
+      </div>
+    </div>
   
     <!-- CONTENT  -->
   
@@ -129,6 +153,7 @@
       <div class="card bg-light mb-3 mx-auto" id="invite" style="max-width:90%;">
         <div class="card-header"><b>Step 3:</b> Invite others to sign the document</div>
         <div class="card-body">
+          <p>Your transaction may take a few minutes to process on the Ethereum network.</p>
         </div>
       </div>
     

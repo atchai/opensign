@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-contract Notary{
+contract OpenSign{
     struct Document {
         uint timestamp;
         bytes ipfs_hash;

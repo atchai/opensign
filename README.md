@@ -6,6 +6,8 @@ Files are stored on the Interplanetary FileSystem (IPFS) and the signatures are 
 
 This project is available to use at https://opensignapp.com
 
+A version is also hosted on IPFS at https://gateway.ipfs.io/ipfs/QmUu7kuy7dHCC5RDL3hscji81Fb6EmoBRzmwcrgJweRVjJ/
+
 
 ### Development
 #### Prerequisites

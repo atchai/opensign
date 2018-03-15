@@ -1,4 +1,4 @@
-const ipfs_url_base = 'http://ipfs.infura.io/ipfs/';
+const ipfs_url_base = 'https://gateway.ipfs.io/ipfs/';
 const sign_page_url = 'sign';
 
 // Helper function to show only one div
@@ -68,7 +68,7 @@ window.addEventListener('load', function() {
 
 $(document).ready(function() {
   
-  var ipfs = ''
+  var ipfs = undefined;
   EmbarkJS.Storage.setProvider('ipfs',{server: 'ipfs.infura.io', port: '5001', protocol: 'https'})  
   
   $("#learn-more").hide();
@@ -79,16 +79,15 @@ $(document).ready(function() {
   });
   
   // Sign page
-  if (getQueryVariable("ipfs") != false) {
+  if (getQueryVariable("id") != false && getQueryVariable("ipfs") != false) {
+    let id = getQueryVariable("id");
     $("#signed").hide();
 
     $("span.file_url").html('<a href="' + ipfs_url_base + getQueryVariable("ipfs") + '">View document</a>');
     
     // Get existing signatures
-    $("#signatures button.get").click(function() {
-      let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
-    
-      let addresses = OpenSign.methods.getSignatures(value).call().then(function(signatures) { 
+    $("#signatures button.get").click(function() {    
+      let addresses = OpenSign.methods.getSignatures(id).call().then(function(signatures) { 
         signatures.forEach(function(sig) {
           console.log(sig) 
           
@@ -100,10 +99,8 @@ $(document).ready(function() {
     });
     
     // Sign the document
-    $("#sign button.set").click(function() {
-      let value = web3.utils.asciiToHex(getQueryVariable("ipfs"))
-    
-      OpenSign.methods.signDocument(value).send({from: web3.eth.defaultAccount});
+    $("#sign button.set").click(function() {    
+      OpenSign.methods.signDocument(id).send({from: web3.eth.defaultAccount});
       $("#signed").show();
     });
   }
@@ -119,7 +116,6 @@ $(document).ready(function() {
       var input = $("#storage input[type=file]");
       EmbarkJS.Storage.uploadFile(input).then(function(hash) {
         ipfs = hash;
-        let url = EmbarkJS.Storage.getUrl(ipfs);
         $("#storage .card-body").append('<p><a href="' + ipfs_url_base + ipfs + '">Here is a link to your document</p>');
         $("#blockchain").show()
       
@@ -134,11 +130,15 @@ $(document).ready(function() {
   
     // Step 2 - sign document
     $("#blockchain button.set").click(function() {
-      let value = web3.utils.asciiToHex(ipfs)
+      let ipfs_hex = web3.utils.asciiToHex(ipfs);
+      let id = web3.utils.soliditySha3(ipfs_hex, Date.now());
+      console.log("id=" + id);
+      console.log("ipfs_hex=" + ipfs_hex);
+      
     
-      OpenSign.methods.addDocument(value).send({from: web3.eth.defaultAccount});
+      OpenSign.methods.addDocument(id, ipfs_hex).send({from: web3.eth.defaultAccount});
     
-      let sign_url = window.location.href + sign_page_url + "/?ipfs=" + ipfs;
+      let sign_url = window.location.href + sign_page_url + "/?id=" + id + "&ipfs=" + ipfs;
     
       $("#invite").show();
       $("#invite .card-body").append("<p>Keep this address and share it with others who you want to sign the document: </p>");

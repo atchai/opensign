@@ -6,8 +6,16 @@
     "test": "embark test"
   },
   "author": "",
+  "contributors": [
+    {
+      "name": "Suraj Rawat",
+      "email": "suraj.raw120@gmail.com",
+      "url": "https://github.com/nervehammer"
+    }
+  ],
   "license": "ISC",
   "homepage": "",
-  "devDependencies": {
+  "dependencies": {
+    "embarkjs-connector-web3": "^4.0.0"
   }
 }

@@ -1,18 +1,30 @@
 {
-  "contracts": ["app/contracts/**"],
+  "contracts": ["contracts/**"],
   "app": {
     "css/app.css": ["app/css/**"],
-    "js/app.js": ["embark.js", "app/js/_vendor/jquery.min.js", "app/js/_vendor/bootstrap.min.js",  "app/js/**"],
+    "js/app.js": [
+      "app/js/_vendor/jquery.min.js",
+      "app/js/_vendor/bootstrap.min.js",
+      "app/js/**",
+      "artifacts/embarkjs.js"
+    ],
     "index.html": "app/index.html",
     "sign/index.html": "app/sign.html",
     "favicon-96x96.png": "app/favicon-96x96.png",
     "favicon-32x32.png": "app/favicon-32x32.png",
-    "favicon-16x16.png": "app/favicon-16x16.png",   
+    "favicon-16x16.png": "app/favicon-16x16.png",
     "apple-icon-180x180.png": "app/apple-icon-180x180.png",
     "android-icon-192x192.png": "app/android-icon-192x192.png"
-    
   },
   "buildDir": "dist/",
   "config": "config/",
-  "plugins": {}
+  "versions": {
+    "web3": "1.0.0-beta",
+    "solc": "0.4.17",
+    "ipfs-api": "17.2.4"
+  },
+  "generationDir": "artifacts",
+  "plugins": {
+    "embarkjs-connector-web3": {}
+  }
 }
